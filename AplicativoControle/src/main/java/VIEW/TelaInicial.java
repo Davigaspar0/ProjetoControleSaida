@@ -102,6 +102,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jSeparator1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jSeparator1.setPreferredSize(new java.awt.Dimension(8, 5));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
