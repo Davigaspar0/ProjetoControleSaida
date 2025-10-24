@@ -29,8 +29,7 @@ public class ConexãoDAO {
     public Connection getConnection() {
       try {
             Connection cn;
-            cn = DriverManager.getConnection("jdbc:mysql://localhost/Banco_Liceu", "root", "");
-            jdbc:mysql://localhost:3306/Banco_Liceu
+            cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Banco_Liceu", "root", "");            
 
            
             return cn;

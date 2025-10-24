@@ -12,10 +12,17 @@ import java.sql.SQLException;
     
     public class AdministradorDAO extends ConexãoDAO {
         
-        public Integer LoginAdm() throws SQLException {
+        public Integer LoginAdm(Administrador Administrador) throws SQLException {
             
              String query = "SELECT * FROM Administrador WHERE nome = ? and senha = ?";
-             ResultSet rs = executeQuery(query , Administrador)
+             ResultSet rs = executeQuery(query,  Administrador.getNome(), Administrador.getSenha());
+            
+             if(rs.next()){
+            return Administrador.getId();
+                    
+          }else{
+        return null;
+    }   
             
         
         }
