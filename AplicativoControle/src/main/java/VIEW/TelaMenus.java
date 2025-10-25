@@ -32,9 +32,9 @@ public class TelaMenus extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        ButtonRegistrar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        ButtonVisualizar = new javax.swing.JButton();
 
         jButton2.setText("jButton2");
 
@@ -62,26 +62,26 @@ public class TelaMenus extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\davio\\OneDrive\\Imagens\\edit.png")); // NOI18N
         jLabel2.setText("jLabel2");
 
-        jButton3.setBackground(new java.awt.Color(44, 217, 47));
-        jButton3.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("REGISTRAR SAÍDA");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        ButtonRegistrar.setBackground(new java.awt.Color(44, 217, 47));
+        ButtonRegistrar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        ButtonRegistrar.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonRegistrar.setText("REGISTRAR SAÍDA");
+        ButtonRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                ButtonRegistrarActionPerformed(evt);
             }
         });
 
         jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\davio\\OneDrive\\Imagens\\documento.png")); // NOI18N
         jLabel3.setText("jLabel3");
 
-        jButton4.setBackground(new java.awt.Color(44, 217, 47));
-        jButton4.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setText("VISUALIZAR SAÍDAS");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        ButtonVisualizar.setBackground(new java.awt.Color(44, 217, 47));
+        ButtonVisualizar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
+        ButtonVisualizar.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonVisualizar.setText("VISUALIZAR SAÍDAS");
+        ButtonVisualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                ButtonVisualizarActionPerformed(evt);
             }
         });
 
@@ -91,11 +91,11 @@ public class TelaMenus extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(jButton3)
+                .addComponent(ButtonRegistrar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4)
+                .addComponent(ButtonVisualizar)
                 .addGap(22, 22, 22))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -124,12 +124,12 @@ public class TelaMenus extends javax.swing.JFrame {
                         .addGap(94, 94, 94)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(ButtonRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(100, 100, 100)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(ButtonVisualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
                 .addContainerGap(12, Short.MAX_VALUE))
@@ -156,13 +156,15 @@ public class TelaMenus extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void ButtonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRegistrarActionPerformed
+        TelaRegistrar cad3 = new TelaRegistrar();
+               cad3.setVisible(true);
+               dispose();
+    }//GEN-LAST:event_ButtonRegistrarActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void ButtonVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonVisualizarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_ButtonVisualizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,10 +202,10 @@ public class TelaMenus extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonRegistrar;
+    private javax.swing.JButton ButtonVisualizar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
