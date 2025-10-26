@@ -4,6 +4,15 @@
  */
 package VIEW;
 
+import DAO.AlunoDAO;
+import ENTIDADES.Aluno;
+import java.sql.SQLException;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
+
 /**
  *
  * @author davio
@@ -27,58 +36,72 @@ public class TelaVisualizar extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        ButaoVolta = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         jLabel2 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        JtableSaidas = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("CONTROLADOR DE SAÍDAS");
 
         jPanel1.setBackground(new java.awt.Color(92, 203, 95));
 
-        jButton1.setBackground(new java.awt.Color(44, 217, 47));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("VOLTAR");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        ButaoVolta.setBackground(new java.awt.Color(44, 217, 47));
+        ButaoVolta.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        ButaoVolta.setForeground(new java.awt.Color(255, 255, 255));
+        ButaoVolta.setText("VOLTAR");
+        ButaoVolta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                ButaoVoltaActionPerformed(evt);
             }
         });
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\davio\\Downloads\\remova o fundo branc.png")); // NOI18N
         jLabel1.setText("jLabel1");
 
-        jTextArea1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextArea1.setColumns(20);
-        jTextArea1.setForeground(new java.awt.Color(0, 0, 0));
-        jTextArea1.setRows(5);
-        jTextArea1.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.green, new java.awt.Color(51, 255, 0)));
-        jScrollPane1.setViewportView(jTextArea1);
-
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("VISUALIZAR SAÍDAS");
+
+        JtableSaidas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Nome", "Serie", "Data", "Hora", "Autorizou", "Saiu com quem", "Motivo"
+            }
+        ));
+        JtableSaidas.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                JtableSaidasAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
+        jScrollPane2.setViewportView(JtableSaidas);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addContainerGap()
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(137, 137, 137)
                             .addComponent(jLabel2)
                             .addGap(58, 58, 58)
-                            .addComponent(jButton1))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addGap(32, 32, 32)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(ButaoVolta))))
                 .addContainerGap(33, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -87,10 +110,10 @@ public class TelaVisualizar extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+                    .addComponent(ButaoVolta))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addContainerGap())
         );
@@ -106,12 +129,68 @@ public class TelaVisualizar extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(495, 363));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void ButaoVoltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButaoVoltaActionPerformed
+        TelaMenus kkk = new TelaMenus();
+        kkk.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_ButaoVoltaActionPerformed
+
+    private void JtableSaidasAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_JtableSaidasAncestorAdded
+       
+
+    DefaultTableModel model = (DefaultTableModel) JtableSaidas.getModel();
+    
+   
+    model.setNumRows(0); 
+
+    AlunoDAO dao = new AlunoDAO();
+    
+    try {
+      
+        List<Aluno> lista = dao.getAllAlunos();
+        
+        
+        for (Aluno a : lista) {
+            model.addRow(new Object[]{
+                a.getNome_completo(),
+                a.getSerie(),
+                a.getData_saida(),
+                a.getHora(),
+                a.getQuem_autorizou(),
+                a.getSaiu_com_quem(),
+                a.getMotivo()
+              
+            });
+        }
+        
+    } catch (SQLException e) {
+        // Trata o erro de conexão ou SQL
+        JOptionPane.showMessageDialog(this, "Erro ao carregar dados da tabela: " + e.getMessage(), "Erro de Banco de Dados", JOptionPane.ERROR_MESSAGE);
+    }
+    
+  
+
+        JtableSaidas.setAutoResizeMode(JTable.AUTO_RESIZE_OFF); 
+
+        TableColumn col;
+
+
+        col = JtableSaidas.getColumnModel().getColumn(0);
+        col.setPreferredWidth(125); 
+
+
+        col = JtableSaidas.getColumnModel().getColumn(1);
+        col.setPreferredWidth(60); 
+
+
+        col = JtableSaidas.getColumnModel().getColumn(6);
+        col.setPreferredWidth(200); 
+
+    }//GEN-LAST:event_JtableSaidasAncestorAdded
 
     /**
      * @param args the command line arguments
@@ -149,11 +228,11 @@ public class TelaVisualizar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton ButaoVolta;
+    private javax.swing.JTable JtableSaidas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }

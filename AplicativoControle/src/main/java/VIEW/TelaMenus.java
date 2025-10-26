@@ -39,6 +39,7 @@ public class TelaMenus extends javax.swing.JFrame {
         jButton2.setText("jButton2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("CONTROLADOR DE SAÍDAS");
 
         jPanel1.setBackground(new java.awt.Color(92, 203, 95));
 
@@ -132,7 +133,7 @@ public class TelaMenus extends javax.swing.JFrame {
                         .addComponent(ButtonVisualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -146,7 +147,8 @@ public class TelaMenus extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(495, 370));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -163,7 +165,9 @@ public class TelaMenus extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonRegistrarActionPerformed
 
     private void ButtonVisualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonVisualizarActionPerformed
-        // TODO add your handling code here:
+        TelaVisualizar cad4 = new TelaVisualizar();
+               cad4.setVisible(true);
+               dispose();
     }//GEN-LAST:event_ButtonVisualizarActionPerformed
 
     /**
