@@ -217,6 +217,20 @@ public class TelaInicial extends javax.swing.JFrame {
             return;
         }
         
+        if (nome.equals("")){
+            JOptionPane.showMessageDialog(null, "Preencha o campo NOME");
+            
+            return;
+
+        }
+        
+        if (senha.equals("")){
+            JOptionPane.showMessageDialog(null, "Preencha o campo SENHA");
+            
+            return;
+        }
+        
+        
          Administrador objADMLogin = new Administrador();
          
          objADMLogin.setNome(nome);

@@ -266,6 +266,32 @@ public class TelaRegistrar extends javax.swing.JFrame {
 
     private void ButtonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRegistrarActionPerformed
         String nome,serie,data_saida,hora,quem_autorizou,saiu_com_quem,motivo;
+        
+        
+        if (BoxNome.getText().equals("") &&
+        BoxSerie.getText().equals("") &&
+        BoxData.getText().equals("") &&
+        BoxHora.getText().equals("") &&
+        BoxAutori.getText().equals("") && 
+        BoxSaiu.getText().equals("")&&
+        BoxMotivo.getText().equals("")) {
+
+    JOptionPane.showMessageDialog(null, "Preencha os campos!");
+    return;
+    }
+        
+        if (BoxNome.getText().equals("") ||
+        BoxSerie.getText().equals("") ||
+        BoxData.getText().equals("") ||
+        BoxHora.getText().equals("") ||
+        BoxAutori.getText().equals("") ||
+        BoxSaiu.getText().equals("")||
+        BoxMotivo.getText().equals("")) {
+            
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
+            return;
+            
+        }
 
         nome = BoxNome.getText();
         serie = BoxSerie.getText();
