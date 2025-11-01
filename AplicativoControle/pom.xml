@@ -5,22 +5,27 @@
     <artifactId>AplicativoControle</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
+    
     <dependencies>
+        
+        <dependency>
+            <groupId>org.mindrot</groupId>
+            <artifactId>jbcrypt</artifactId>
+            <version>0.4</version> 
+        </dependency>
+        
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.30</version>
+        </dependency>
+        
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.10.3</version>
             <scope>test</scope>
         </dependency>
-        
-        <dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-        <version>8.0.30</version> 
-        </dependency>
-        
-        
-    
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-params</artifactId>
@@ -33,13 +38,16 @@
             <version>5.10.3</version>
             <scope>test</scope>
         </dependency>
+        
         <dependency>
             <groupId>io.github.iltotore</groupId>
             <artifactId>millmc-core_2.13</artifactId>
             <version>1.0.0</version>
             <type>jar</type>
         </dependency>
-    </dependencies>
+        
+        </dependencies>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>21</maven.compiler.release>

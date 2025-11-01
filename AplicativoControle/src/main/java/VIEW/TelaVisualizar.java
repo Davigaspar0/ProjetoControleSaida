@@ -140,7 +140,7 @@ public class TelaVisualizar extends javax.swing.JFrame {
     }//GEN-LAST:event_ButaoVoltaActionPerformed
 
     private void JtableSaidasAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_JtableSaidasAncestorAdded
-       
+       JOptionPane.showMessageDialog(null, "TODAS AS SAÍDAS ESTÃO REGISTRADAS NO QUADRO A SEGUIR");
 
     DefaultTableModel model = (DefaultTableModel) JtableSaidas.getModel();
     
@@ -168,7 +168,7 @@ public class TelaVisualizar extends javax.swing.JFrame {
         }
         
     } catch (SQLException e) {
-        // Trata o erro de conexão ou SQL
+       
         JOptionPane.showMessageDialog(this, "Erro ao carregar dados da tabela: " + e.getMessage(), "Erro de Banco de Dados", JOptionPane.ERROR_MESSAGE);
     }
     
@@ -185,6 +185,9 @@ public class TelaVisualizar extends javax.swing.JFrame {
 
         col = JtableSaidas.getColumnModel().getColumn(1);
         col.setPreferredWidth(60); 
+        
+        col = JtableSaidas.getColumnModel().getColumn(5);
+        col.setPreferredWidth(105); 
 
 
         col = JtableSaidas.getColumnModel().getColumn(6);

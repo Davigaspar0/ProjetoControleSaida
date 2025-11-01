@@ -1,29 +1,43 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package DAO;
+
 
 import ENTIDADES.Administrador;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import org.mindrot.jbcrypt.BCrypt; // Import da biblioteca BCrypt
 
+public class AdministradorDAO extends ConexãoDAO {
 
-    
-    public class AdministradorDAO extends ConexãoDAO {
+    public Integer LoginAdm(Administrador Administrador) throws SQLException {
         
-        public Integer LoginAdm(Administrador Administrador) throws SQLException {
+        
+        String query = "SELECT id, senha FROM Administrador WHERE nome = ?";
+        
+        
+        try (ResultSet rs = executeQuery(query, Administrador.getNome())) {
             
-             String query = "SELECT * FROM Administrador WHERE nome = ? and senha = ?";
-             ResultSet rs = executeQuery(query,  Administrador.getNome(), Administrador.getSenha());
-            
-             if(rs.next()){
-            return Administrador.getId();
+            if (rs.next()) {
+                
+                String hashArmazenado = rs.getString("senha"); 
+                Integer idUsuario = rs.getInt("id_adm");
+                
+                String senhaDigitada = Administrador.getSenha(); // Senha em texto puro
+                
+                
+                if (BCrypt.checkpw(senhaDigitada, hashArmazenado)) {
                     
-          }else{
-        return null;
-    }   
-            
-        
+                    
+                    return idUsuario;
+                    
+                } else {
+                    
+                    return null;
+                }
+                
+            } else {
+                
+                return null;
+            }
         }
+    }
 }
