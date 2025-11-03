@@ -1,8 +1,8 @@
 package DAO;
 
 import ENTIDADES.Aluno;
-import java.util.ArrayList; // Importa a classe para inicializar a lista
-import java.util.List; // Importa a interface List
+import java.util.ArrayList; 
+import java.util.List; 
 import java.sql.SQLException;
 import java.sql.ResultSet;
 
@@ -12,10 +12,10 @@ public class AlunoDAO extends ConexãoDAO {
     public Integer addAluno(Aluno Aluno) throws SQLException
     {
         
-        String query = "INSERT INTO Alunos(nome_completo,serie,data_saida,hora,quem_autorizou,saiu_com_quem,motivo ) VALUES (?,?,?,?,?,?,?)";
+        String query = "INSERT INTO Alunos(nome_completo,serie,data_saida,hora,quem_autorizou,saiu_com_quem,motivo,saidaFeitaPor ) VALUES (?,?,?,?,?,?,?,?)";
         
         
-        executeComand(query, Aluno.getNome_completo(), Aluno.getSerie(), Aluno.getData_saida(), Aluno.getHora(), Aluno.getQuem_autorizou(), Aluno.getSaiu_com_quem(), Aluno.getMotivo());     
+        executeComand(query, Aluno.getNome_completo(), Aluno.getSerie(), Aluno.getData_saida(), Aluno.getHora(), Aluno.getQuem_autorizou(), Aluno.getSaiu_com_quem(), Aluno.getMotivo(), Aluno.getSaidaFeitaPor());     
         
         return Aluno.getId();
     }
@@ -40,6 +40,7 @@ public class AlunoDAO extends ConexãoDAO {
                 a.setQuem_autorizou(rs.getString("quem_autorizou"));
                 a.setSaiu_com_quem(rs.getString("saiu_com_quem"));
                 a.setMotivo(rs.getString("motivo"));
+                a.setSaidaFeitaPor(rs.getString("saidaFeitaPor"));
 
                 listaAlunos.add(a);
             }

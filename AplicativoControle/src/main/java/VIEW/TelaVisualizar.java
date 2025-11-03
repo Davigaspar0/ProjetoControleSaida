@@ -64,17 +64,19 @@ public class TelaVisualizar extends javax.swing.JFrame {
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("VISUALIZAR SAÍDAS");
 
+        JtableSaidas.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         JtableSaidas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Nome", "Serie", "Data", "Hora", "Autorizou", "Saiu com quem", "Motivo"
+                "Nome", "Serie", "Data", "Hora", "Autorizou", "Saiu com quem", "Motivo", "Saida feita por"
             }
         ));
+        JtableSaidas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         JtableSaidas.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 JtableSaidasAncestorAdded(evt);
@@ -162,7 +164,8 @@ public class TelaVisualizar extends javax.swing.JFrame {
                 a.getHora(),
                 a.getQuem_autorizou(),
                 a.getSaiu_com_quem(),
-                a.getMotivo()
+                a.getMotivo(),
+                a.getSaidaFeitaPor()
               
             });
         }
@@ -180,7 +183,7 @@ public class TelaVisualizar extends javax.swing.JFrame {
 
 
         col = JtableSaidas.getColumnModel().getColumn(0);
-        col.setPreferredWidth(125); 
+        col.setPreferredWidth(180); 
 
 
         col = JtableSaidas.getColumnModel().getColumn(1);
@@ -191,6 +194,9 @@ public class TelaVisualizar extends javax.swing.JFrame {
 
 
         col = JtableSaidas.getColumnModel().getColumn(6);
+        col.setPreferredWidth(200); 
+        
+        col = JtableSaidas.getColumnModel().getColumn(7);
         col.setPreferredWidth(200); 
 
     }//GEN-LAST:event_JtableSaidasAncestorAdded

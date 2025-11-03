@@ -32,6 +32,7 @@ public class TelaRegistrar extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton2 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         BoxVoltar = new javax.swing.JButton();
@@ -52,8 +53,12 @@ public class TelaRegistrar extends javax.swing.JFrame {
         BoxMotivo = new javax.swing.JTextField();
         BoxLimpa = new javax.swing.JButton();
         ButtonRegistrar = new javax.swing.JButton();
+        BoxSaidafeita = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
 
         jButton2.setText("jButton2");
+
+        jLabel10.setText("SAIDA FEITA POR:");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CONTROLADOR DE SAÍDAS");
@@ -143,6 +148,10 @@ public class TelaRegistrar extends javax.swing.JFrame {
             }
         });
 
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("SAIDA FEITA POR:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -176,25 +185,32 @@ public class TelaRegistrar extends javax.swing.JFrame {
                                     .addComponent(BoxHora, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE)
                                     .addComponent(jLabel7)
                                     .addComponent(BoxAutori))
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(5, 5, 5)
-                                        .addComponent(jLabel8))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(BoxSaiu, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(BoxSaiu, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(5, 5, 5)
+                                        .addComponent(jLabel8))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(BoxLimpa)
                                 .addGap(4, 4, 4)
                                 .addComponent(ButtonRegistrar)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(4, 4, 4)
-                                .addComponent(jLabel9))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(BoxMotivo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(34, Short.MAX_VALUE))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(BoxMotivo, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                            .addComponent(jLabel11)
+                                            .addGap(0, 0, Short.MAX_VALUE))
+                                        .addComponent(BoxSaidafeita)))
+                                .addContainerGap(34, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addComponent(jLabel9)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,7 +223,6 @@ public class TelaRegistrar extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addGap(2, 2, 2)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(BoxNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(2, 2, 2)
@@ -217,12 +232,16 @@ public class TelaRegistrar extends javax.swing.JFrame {
                         .addGap(2, 2, 2)
                         .addComponent(jLabel5)
                         .addGap(2, 2, 2)
-                        .addComponent(BoxData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(2, 2, 2)
-                .addComponent(jLabel6)
-                .addGap(2, 2, 2)
-                .addComponent(BoxHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(BoxData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(2, 2, 2)
+                        .addComponent(jLabel6))
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(3, 3, 3)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BoxHora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BoxSaidafeita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(3, 3, 3)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(jLabel8)
@@ -235,12 +254,12 @@ public class TelaRegistrar extends javax.swing.JFrame {
                             .addComponent(BoxSaiu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(BoxLimpa)
-                            .addComponent(ButtonRegistrar)))
+                            .addComponent(BoxLimpa, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ButtonRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addComponent(BoxMotivo, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -254,43 +273,38 @@ public class TelaRegistrar extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(504, 389));
+        setSize(new java.awt.Dimension(504, 384));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BoxVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoxVoltarActionPerformed
-       TelaMenus cad9 = new TelaMenus();
-         cad9.setVisible(true);
-         dispose();
-    }//GEN-LAST:event_BoxVoltarActionPerformed
-
     private void ButtonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRegistrarActionPerformed
-        String nome,serie,data_saida,hora,quem_autorizou,saiu_com_quem,motivo;
-        
-        
-        if (BoxNome.getText().equals("") &&
-        BoxSerie.getText().equals("") &&
-        BoxData.getText().equals("") &&
-        BoxHora.getText().equals("") &&
-        BoxAutori.getText().equals("") && 
-        BoxSaiu.getText().equals("")&&
-        BoxMotivo.getText().equals("")) {
+        String nome,serie,data_saida,hora,quem_autorizou,saiu_com_quem,motivo,feita;
 
-    JOptionPane.showMessageDialog(null, "Preencha os campos!");
-    return;
-    }
-        
+        if (BoxNome.getText().equals("") &&
+            BoxSerie.getText().equals("") &&
+            BoxData.getText().equals("") &&
+            BoxHora.getText().equals("") &&
+            BoxAutori.getText().equals("") &&
+            BoxSaiu.getText().equals("")&&
+            BoxMotivo.getText().equals("")&&
+            BoxSaidafeita.getText().equals("")) {
+
+            JOptionPane.showMessageDialog(null, "Preencha os campos!");
+            return;
+        }
+
         if (BoxNome.getText().equals("") ||
-        BoxSerie.getText().equals("") ||
-        BoxData.getText().equals("") ||
-        BoxHora.getText().equals("") ||
-        BoxAutori.getText().equals("") ||
-        BoxSaiu.getText().equals("")||
-        BoxMotivo.getText().equals("")) {
-            
+            BoxSerie.getText().equals("") ||
+            BoxData.getText().equals("") ||
+            BoxHora.getText().equals("") ||
+            BoxAutori.getText().equals("") ||
+            BoxSaiu.getText().equals("")||
+            BoxMotivo.getText().equals("")||
+            BoxSaidafeita.getText().equals("")) {
+
             JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
             return;
-            
+
         }
 
         nome = BoxNome.getText();
@@ -300,6 +314,7 @@ public class TelaRegistrar extends javax.swing.JFrame {
         quem_autorizou = BoxAutori.getText();
         saiu_com_quem = BoxSaiu.getText();
         motivo = BoxMotivo.getText();
+        feita = BoxSaidafeita.getText();
 
         Aluno caranovo = new Aluno();
 
@@ -310,6 +325,7 @@ public class TelaRegistrar extends javax.swing.JFrame {
         caranovo.setQuem_autorizou(quem_autorizou);
         caranovo.setSaiu_com_quem(saiu_com_quem);
         caranovo.setMotivo(motivo);
+        caranovo.setSaidaFeitaPor(feita);
 
         AlunoDAO objDAO = new AlunoDAO();
 
@@ -322,28 +338,20 @@ public class TelaRegistrar extends javax.swing.JFrame {
             Logger.getLogger(TelaRegistrar.class.getName()).log(Level.SEVERE, null, ex);
 
         }
-                                           
 
-        
-
-        
-        
     }//GEN-LAST:event_ButtonRegistrarActionPerformed
 
     private void BoxLimpaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoxLimpaActionPerformed
-       BoxNome.setText("");
-       BoxSerie.setText("");
-       BoxSaiu.setText("");
-       BoxData.setText("");
-       BoxMotivo.setText("");
-       BoxHora.setText("");
-       BoxAutori.setText("");
-       
-    }//GEN-LAST:event_BoxLimpaActionPerformed
+        BoxNome.setText("");
+        BoxSerie.setText("");
+        BoxSaiu.setText("");
+        BoxData.setText("");
+        BoxMotivo.setText("");
+        BoxHora.setText("");
+        BoxAutori.setText("");
+        BoxSaidafeita.setText("");
 
-    private void BoxDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoxDataActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BoxDataActionPerformed
+    }//GEN-LAST:event_BoxLimpaActionPerformed
 
     private void BoxSaiuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoxSaiuActionPerformed
         // TODO add your handling code here:
@@ -352,6 +360,16 @@ public class TelaRegistrar extends javax.swing.JFrame {
     private void BoxHoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoxHoraActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BoxHoraActionPerformed
+
+    private void BoxDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoxDataActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BoxDataActionPerformed
+
+    private void BoxVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BoxVoltarActionPerformed
+        TelaMenus cad9 = new TelaMenus();
+        cad9.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_BoxVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -395,12 +413,15 @@ public class TelaRegistrar extends javax.swing.JFrame {
     private javax.swing.JButton BoxLimpa;
     private javax.swing.JTextField BoxMotivo;
     private javax.swing.JTextField BoxNome;
+    private javax.swing.JTextField BoxSaidafeita;
     private javax.swing.JTextField BoxSaiu;
     private javax.swing.JTextField BoxSerie;
     private javax.swing.JButton BoxVoltar;
     private javax.swing.JButton ButtonRegistrar;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
