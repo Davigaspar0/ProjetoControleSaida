@@ -314,6 +314,7 @@ public class TelaRegistrar extends javax.swing.JFrame {
 
     private void ButtonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonRegistrarActionPerformed
         String nome,serie,data_saida,hora,quem_autorizou,saiu_com_quem,motivo,saidafeita;
+
         
         
         if (BoxNome.getText().equals("") &&
@@ -322,7 +323,8 @@ public class TelaRegistrar extends javax.swing.JFrame {
         BoxHora.getText().equals("") &&
         BoxAutori.getText().equals("") && 
         BoxSaiu.getText().equals("")&&
-        BoxMotivo.getText().equals("")) {
+        BoxMotivo.getText().equals("")&&
+        BoxSaiu.getText().equals("")) {
 
     JOptionPane.showMessageDialog(null, "Preencha os campos!");
     return;
@@ -334,12 +336,16 @@ public class TelaRegistrar extends javax.swing.JFrame {
         BoxHora.getText().equals("") ||
         BoxAutori.getText().equals("") ||
         BoxSaiu.getText().equals("")||
-        BoxMotivo.getText().equals("")) {
+        BoxMotivo.getText().equals("")||
+        BoxSaiu.getText().equals("")) {
             
             JOptionPane.showMessageDialog(null, "Preencha todos os campos!");
             return;
             
         }
+        
+        int resposta = JOptionPane.showConfirmDialog(null,"Deseja continuar","ATENÇÃO",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE);
+            if (resposta == JOptionPane.YES_OPTION){
 
         nome = BoxNome.getText();
         serie = BoxSerie.getText();
@@ -364,10 +370,10 @@ public class TelaRegistrar extends javax.swing.JFrame {
         AlunoDAO objDAO = new AlunoDAO();
 
         try {
-
+            JOptionPane.showMessageDialog(null, "Saída registrada com sucesso!");
             objDAO.addAluno(caranovo);
 
-            JOptionPane.showMessageDialog(null, "Saída registrada com sucesso!");
+         
         } catch (SQLException ex) {
             Logger.getLogger(TelaRegistrar.class.getName()).log(Level.SEVERE, null, ex);
 
@@ -376,7 +382,9 @@ public class TelaRegistrar extends javax.swing.JFrame {
 
         
 
-        
+            } else {
+                JOptionPane.showMessageDialog(null, "Operação cancelada");
+            }
         
     }//GEN-LAST:event_ButtonRegistrarActionPerformed
 
