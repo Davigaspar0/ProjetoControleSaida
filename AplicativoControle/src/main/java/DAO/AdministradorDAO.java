@@ -19,7 +19,7 @@ public class AdministradorDAO extends ConexãoDAO {
             if (rs.next()) {
                 
                 String hashArmazenado = rs.getString("senha"); 
-                Integer idUsuario = rs.getInt("id_adm");
+                Integer idUsuario = rs.getInt("id");
                 
                 String senhaDigitada = Administrador.getSenha(); // Senha em texto puro
                 

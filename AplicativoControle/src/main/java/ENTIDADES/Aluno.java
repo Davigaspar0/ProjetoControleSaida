@@ -17,6 +17,7 @@ public class Aluno {
     private String quem_autorizou;
     private String saiu_com_quem;
     private String motivo;
+    private String saidaFeitaPor;
 
     /**
      * @return the id
@@ -128,6 +129,20 @@ public class Aluno {
      */
     public void setMotivo(String motivo) {
         this.motivo = motivo;
+    }
+
+    /**
+     * @return the saidaFeitaPor
+     */
+    public String getSaidaFeitaPor() {
+        return saidaFeitaPor;
+    }
+
+    /**
+     * @param saidaFeitaPor the saidaFeitaPor to set
+     */
+    public void setSaidaFeitaPor(String saidaFeitaPor) {
+        this.saidaFeitaPor = saidaFeitaPor;
     }
 
 }

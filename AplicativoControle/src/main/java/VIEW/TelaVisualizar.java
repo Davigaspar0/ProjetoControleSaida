@@ -10,8 +10,10 @@ import java.sql.SQLException;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -35,12 +37,26 @@ public class TelaVisualizar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         ButaoVolta = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         JtableSaidas = new javax.swing.JTable();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CONTROLADOR DE SAÍDAS");
@@ -86,12 +102,27 @@ public class TelaVisualizar extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(JtableSaidas);
 
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextField1KeyReleased(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("FILTRAR PELO NOME");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
@@ -101,8 +132,14 @@ public class TelaVisualizar extends javax.swing.JFrame {
                             .addComponent(ButaoVolta)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(189, 189, 189)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(34, 34, 34))
+                            .addComponent(jTextField1))))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,10 +148,18 @@ public class TelaVisualizar extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(ButaoVolta))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
+                        .addGap(20, 20, 20))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
+                        .addGap(2, 2, 2)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -122,7 +167,9 @@ public class TelaVisualizar extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,67 +180,71 @@ public class TelaVisualizar extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTextField1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyReleased
+        DefaultTableModel modelo = (DefaultTableModel) JtableSaidas.getModel();
+        TableRowSorter<DefaultTableModel> table = new  TableRowSorter<>(modelo);
+        JtableSaidas.setRowSorter(table);
+        table.setRowFilter(RowFilter.regexFilter(jTextField1.getText()));
+    }//GEN-LAST:event_jTextField1KeyReleased
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void JtableSaidasAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_JtableSaidasAncestorAdded
+        JOptionPane.showMessageDialog(null, "TODAS AS SAÍDAS ESTÃO REGISTRADAS NO QUADRO A SEGUIR");
+
+        DefaultTableModel model = (DefaultTableModel) JtableSaidas.getModel();
+
+        model.setNumRows(0);
+
+        AlunoDAO dao = new AlunoDAO();
+
+        try {
+
+            List<Aluno> lista = dao.getAllAlunos();
+
+            for (Aluno a : lista) {
+                model.addRow(new Object[]{
+                    a.getNome_completo(),
+                    a.getSerie(),
+                    a.getData_saida(),
+                    a.getHora(),
+                    a.getQuem_autorizou(),
+                    a.getSaiu_com_quem(),
+                    a.getMotivo(),
+                    a.getSaidaFeitaPor()
+
+                });
+            }
+
+        } catch (SQLException e) {
+
+            JOptionPane.showMessageDialog(this, "Erro ao carregar dados da tabela: " + e.getMessage(), "Erro de Banco de Dados", JOptionPane.ERROR_MESSAGE);
+        }
+
+        JtableSaidas.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+
+        TableColumn col;
+
+        col = JtableSaidas.getColumnModel().getColumn(0);
+        col.setPreferredWidth(125);
+
+        col = JtableSaidas.getColumnModel().getColumn(1);
+        col.setPreferredWidth(60);
+
+        col = JtableSaidas.getColumnModel().getColumn(5);
+        col.setPreferredWidth(105);
+
+        col = JtableSaidas.getColumnModel().getColumn(6);
+        col.setPreferredWidth(200);
+    }//GEN-LAST:event_JtableSaidasAncestorAdded
+
     private void ButaoVoltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButaoVoltaActionPerformed
         TelaMenus kkk = new TelaMenus();
         kkk.setVisible(true);
         dispose();
     }//GEN-LAST:event_ButaoVoltaActionPerformed
-
-    private void JtableSaidasAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_JtableSaidasAncestorAdded
-       JOptionPane.showMessageDialog(null, "TODAS AS SAÍDAS ESTÃO REGISTRADAS NO QUADRO A SEGUIR");
-
-    DefaultTableModel model = (DefaultTableModel) JtableSaidas.getModel();
-    
-   
-    model.setNumRows(0); 
-
-    AlunoDAO dao = new AlunoDAO();
-    
-    try {
-      
-        List<Aluno> lista = dao.getAllAlunos();
-        
-        
-        for (Aluno a : lista) {
-            model.addRow(new Object[]{
-                a.getNome_completo(),
-                a.getSerie(),
-                a.getData_saida(),
-                a.getHora(),
-                a.getQuem_autorizou(),
-                a.getSaiu_com_quem(),
-                a.getMotivo()
-              
-            });
-        }
-        
-    } catch (SQLException e) {
-       
-        JOptionPane.showMessageDialog(this, "Erro ao carregar dados da tabela: " + e.getMessage(), "Erro de Banco de Dados", JOptionPane.ERROR_MESSAGE);
-    }
-    
-  
-
-        JtableSaidas.setAutoResizeMode(JTable.AUTO_RESIZE_OFF); 
-
-        TableColumn col;
-
-
-        col = JtableSaidas.getColumnModel().getColumn(0);
-        col.setPreferredWidth(125); 
-
-
-        col = JtableSaidas.getColumnModel().getColumn(1);
-        col.setPreferredWidth(60); 
-        
-        col = JtableSaidas.getColumnModel().getColumn(5);
-        col.setPreferredWidth(105); 
-
-
-        col = JtableSaidas.getColumnModel().getColumn(6);
-        col.setPreferredWidth(200); 
-
-    }//GEN-LAST:event_JtableSaidasAncestorAdded
 
     /**
      * @param args the command line arguments
@@ -235,7 +286,10 @@ public class TelaVisualizar extends javax.swing.JFrame {
     private javax.swing.JTable JtableSaidas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

@@ -36,12 +36,12 @@ public class TelaInicial extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         BoxNome = new javax.swing.JTextField();
-        BoxSenha = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         ButtonSair = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         BotãoEntrar = new javax.swing.JButton();
+        Boxsenha = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CONTROLADOR DE SAÍDAS");
@@ -147,17 +147,16 @@ public class TelaInicial extends javax.swing.JFrame {
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(55, 55, 55)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(BoxSenha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
-                                .addComponent(BoxNome, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(BoxNome, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)
                             .addComponent(jLabel5)
                             .addComponent(jLabel6)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(BotãoEntrar, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
-                                    .addComponent(ButtonSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .addComponent(ButtonSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(Boxsenha))
                         .addGap(27, 27, 27))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -173,13 +172,13 @@ public class TelaInicial extends javax.swing.JFrame {
                 .addComponent(BoxNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
                 .addComponent(jLabel6)
-                .addGap(0, 0, 0)
-                .addComponent(BoxSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addComponent(Boxsenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(BotãoEntrar)
                 .addGap(5, 5, 5)
                 .addComponent(ButtonSair)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(51, Short.MAX_VALUE))
             .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -210,7 +209,7 @@ public class TelaInicial extends javax.swing.JFrame {
         String nome,senha;
       
        nome = BoxNome.getText().trim();
-       senha = BoxSenha.getText().trim();
+       senha = Boxsenha.getText().trim();
         
         if (nome.equals("") && senha.equals("")){
             JOptionPane.showMessageDialog(null, "Preencha os campos!");
@@ -279,7 +278,7 @@ public class TelaInicial extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotãoEntrar;
     private javax.swing.JTextField BoxNome;
-    private javax.swing.JTextField BoxSenha;
+    private javax.swing.JPasswordField Boxsenha;
     private javax.swing.JButton ButtonSair;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
