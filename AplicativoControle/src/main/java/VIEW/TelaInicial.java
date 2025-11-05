@@ -7,6 +7,7 @@ import VIEW.TelaMenus;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
+
 /**
  *
  * @author davio
@@ -18,6 +19,8 @@ public class TelaInicial extends javax.swing.JFrame {
      */
     public TelaInicial() {
         initComponents();
+        setResizable(false);
+
     }
 
     /**
@@ -87,6 +90,8 @@ public class TelaInicial extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("LOGIN");
 
+        BoxNome.setBackground(new java.awt.Color(255, 255, 255));
+        BoxNome.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.green, java.awt.Color.green));
         BoxNome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BoxNomeActionPerformed(evt);
@@ -123,6 +128,9 @@ public class TelaInicial extends javax.swing.JFrame {
                 BotãoEntrarActionPerformed(evt);
             }
         });
+
+        Boxsenha.setBackground(new java.awt.Color(255, 255, 255));
+        Boxsenha.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.green, java.awt.Color.green));
 
         jSeparator1.setBackground(new java.awt.Color(255, 255, 255));
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));

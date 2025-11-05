@@ -20,6 +20,8 @@ public class TelaRegistrar extends javax.swing.JFrame {
      */
     public TelaRegistrar() {
         initComponents();
+        setResizable(false);
+
     }
 
     /**
@@ -200,7 +202,7 @@ public class TelaRegistrar extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel10)
-                                .addContainerGap(264, Short.MAX_VALUE))
+                                .addContainerGap(275, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(BoxSaida, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -299,7 +301,7 @@ public class TelaRegistrar extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(614, 488));
+        setSize(new java.awt.Dimension(625, 488));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 

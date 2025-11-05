@@ -15,6 +15,8 @@ public class TelaMenus extends javax.swing.JFrame {
      */
     public TelaMenus() {
         initComponents();
+        
+        setResizable(false);
     }
 
     /**
@@ -39,7 +41,6 @@ public class TelaMenus extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CONTROLADOR DE SAÍDAS");
-        setMaximumSize(new java.awt.Dimension(0, 0));
 
         jPanel1.setBackground(new java.awt.Color(92, 203, 95));
         jPanel1.setMaximumSize(new java.awt.Dimension(0, 0));
@@ -51,6 +52,7 @@ public class TelaMenus extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("SAIR");
+        jButton1.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.white, java.awt.Color.white));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -63,6 +65,7 @@ public class TelaMenus extends javax.swing.JFrame {
         ButtonRegistrar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         ButtonRegistrar.setForeground(new java.awt.Color(255, 255, 255));
         ButtonRegistrar.setText("REGISTRAR SAÍDA");
+        ButtonRegistrar.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.white, java.awt.Color.white));
         ButtonRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonRegistrarActionPerformed(evt);
@@ -75,6 +78,7 @@ public class TelaMenus extends javax.swing.JFrame {
         ButtonVisualizar.setFont(new java.awt.Font("Georgia", 1, 14)); // NOI18N
         ButtonVisualizar.setForeground(new java.awt.Color(255, 255, 255));
         ButtonVisualizar.setText("VISUALIZAR SAÍDAS");
+        ButtonVisualizar.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.white, java.awt.Color.white));
         ButtonVisualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonVisualizarActionPerformed(evt);

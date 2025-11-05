@@ -60,7 +60,6 @@ public class TelaVisualizar extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("CONTROLADOR DE SAÍDAS");
-        setMaximumSize(new java.awt.Dimension(0, 0));
 
         jPanel1.setBackground(new java.awt.Color(92, 203, 95));
 
@@ -68,6 +67,7 @@ public class TelaVisualizar extends javax.swing.JFrame {
         ButaoVolta.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ButaoVolta.setForeground(new java.awt.Color(255, 255, 255));
         ButaoVolta.setText("VOLTAR");
+        ButaoVolta.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.white, java.awt.Color.white));
         ButaoVolta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButaoVoltaActionPerformed(evt);
@@ -102,6 +102,8 @@ public class TelaVisualizar extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(JtableSaidas);
 
+        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
+        jTextField1.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.green, java.awt.Color.green));
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
