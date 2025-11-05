@@ -238,6 +238,8 @@ public class TelaVisualizar extends javax.swing.JFrame {
 
         col = JtableSaidas.getColumnModel().getColumn(6);
         col.setPreferredWidth(200);
+        
+        
     }//GEN-LAST:event_JtableSaidasAncestorAdded
 
     private void ButaoVoltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButaoVoltaActionPerformed
