@@ -82,6 +82,7 @@ public class TelaRegistrar extends javax.swing.JFrame {
         BoxVoltar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         BoxVoltar.setForeground(new java.awt.Color(255, 255, 255));
         BoxVoltar.setText("VOLTAR");
+        BoxVoltar.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.white, java.awt.Color.white));
         BoxVoltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BoxVoltarActionPerformed(evt);
@@ -160,6 +161,7 @@ public class TelaRegistrar extends javax.swing.JFrame {
         BoxLimpa.setFont(new java.awt.Font("Georgia", 1, 11)); // NOI18N
         BoxLimpa.setForeground(new java.awt.Color(255, 255, 255));
         BoxLimpa.setText("LIMPAR CAMPOS");
+        BoxLimpa.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.white, java.awt.Color.white));
         BoxLimpa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BoxLimpaActionPerformed(evt);
@@ -170,6 +172,7 @@ public class TelaRegistrar extends javax.swing.JFrame {
         ButtonRegistrar.setFont(new java.awt.Font("Georgia", 1, 11)); // NOI18N
         ButtonRegistrar.setForeground(new java.awt.Color(255, 255, 255));
         ButtonRegistrar.setText("REGISTRAR");
+        ButtonRegistrar.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.white, java.awt.Color.white));
         ButtonRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonRegistrarActionPerformed(evt);
@@ -205,10 +208,10 @@ public class TelaRegistrar extends javax.swing.JFrame {
                                 .addContainerGap(275, Short.MAX_VALUE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(BoxSaida, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(BoxLimpa)
+                                .addGap(18, 18, 18)
+                                .addComponent(BoxLimpa, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ButtonRegistrar)
+                                .addComponent(ButtonRegistrar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(10, 10, 10))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
